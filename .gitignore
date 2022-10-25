@@ -1,0 +1,7 @@
+data/
+export/
+venv/
+settings.json
+data_lake.sql
+con
+convert/__pycache__/helper.cpython-39.pyc
