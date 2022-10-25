@@ -10,7 +10,7 @@ for file in listdir("export"):
     columns = []
     for x in pfile.schema:
         columns.append(f"{x.name}  {convert_to_sql(x.type)}")
-    tab_name = file[:file.find(".")]
+    tab_name = file[: file.find(".")]
     print(f"CREATE TABLE {tab_name} (")
     print(",\n".join(columns))
     print(")")

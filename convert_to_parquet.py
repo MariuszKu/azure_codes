@@ -7,14 +7,12 @@ def convert_to_parquet(file_name):
     first = file_name.rfind("/")
     if ".tsv" in file_name:
         df = pd.read_csv(file_name, sep="\t", header=0, low_memory=False)
-    elif ".csv" in file_name:   
+    elif ".csv" in file_name:
         df = pd.read_csv(file_name, sep=",", header=0, low_memory=False)
 
     file_name = file_name[first:pos]
     print(df.dtypes)
-    df.to_parquet(f"export/{file_name}.parquet", 
-            engine="pyarrow",
-            compression="snappy")
+    df.to_parquet(f"export/{file_name}.parquet", engine="pyarrow", compression="snappy")
 
 
 def main():
